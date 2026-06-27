@@ -47,9 +47,12 @@ export default function Home() {
             <option>Any</option>
           </select>
 
-          <button className="mt-6 w-full rounded-lg bg-black px-4 py-3 font-medium text-white">
-            Search Dublin
-          </button>
+          <a
+            href="/search"
+            className="mt-6 block w-full rounded-lg bg-black px-4 py-3 text-center font-medium text-white"
+          >
+          Search Dublin
+          </a>
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
