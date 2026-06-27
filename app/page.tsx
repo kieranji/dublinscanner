@@ -1,3 +1,5 @@
+import SearchForm from "@/components/SearchForm";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white px-6 py-10">
@@ -15,45 +17,7 @@ export default function Home() {
           events and weekend plans.
         </p>
 
-        <div className="mt-8 rounded-2xl border border-gray-200 p-4 shadow-sm">
-          <label className="block text-sm font-medium text-gray-700">
-            Where?
-          </label>
-          <select className="mt-2 w-full rounded-lg border border-gray-300 p-3">
-            <option>Near TCD</option>
-            <option>City Centre</option>
-            <option>Rathmines</option>
-            <option>Smithfield</option>
-          </select>
-
-          <label className="mt-4 block text-sm font-medium text-gray-700">
-            What do you want?
-          </label>
-          <select className="mt-2 w-full rounded-lg border border-gray-300 p-3">
-            <option>Food</option>
-            <option>Cafés</option>
-            <option>Events</option>
-            <option>Pubs</option>
-            <option>Study spots</option>
-          </select>
-
-          <label className="mt-4 block text-sm font-medium text-gray-700">
-            Budget
-          </label>
-          <select className="mt-2 w-full rounded-lg border border-gray-300 p-3">
-            <option>Free</option>
-            <option>Under €10</option>
-            <option>Under €20</option>
-            <option>Any</option>
-          </select>
-
-          <a
-            href="/search"
-            className="mt-6 block w-full rounded-lg bg-black px-4 py-3 text-center font-medium text-white"
-          >
-          Search Dublin
-          </a>
-        </div>
+        <SearchForm />
 
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl bg-gray-100 p-4">Cheap eats near TCD</div>

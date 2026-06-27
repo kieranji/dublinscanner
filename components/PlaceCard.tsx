@@ -1,4 +1,5 @@
 type PlaceCardProps = {
+  id: number;
   name: string;
   category: string;
   area: string;
@@ -7,6 +8,7 @@ type PlaceCardProps = {
 };
 
 export default function PlaceCard({
+  id,
   name,
   category,
   area,
@@ -41,11 +43,11 @@ export default function PlaceCard({
       </div>
 
       <div className="mt-4 flex gap-4 text-sm">
-        <a href="#" className="underline">
-          Open Maps
+        <a href={`/places/${id}`} className="underline">
+          View details
         </a>
         <a href="#" className="underline">
-          View source
+          Open Maps
         </a>
       </div>
     </article>

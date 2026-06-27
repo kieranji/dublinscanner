@@ -1,41 +1,36 @@
 import PlaceCard from "@/components/PlaceCard";
+import { places } from "@/lib/data";
 
-const places = [
-  {
-    id: 1,
-    name: "Cheap Ramen near TCD",
-    category: "Food",
-    area: "City Centre",
-    price: "Under €15",
-    tags: ["Asian food", "Cheap", "Near TCD"],
-  },
-  {
-    id: 2,
-    name: "Study Café near Trinity",
-    category: "Café",
-    area: "Near TCD",
-    price: "Under €10",
-    tags: ["Study spot", "Coffee", "Quiet"],
-  },
-  {
-    id: 3,
-    name: "Free Comedy Night",
-    category: "Event",
-    area: "Temple Bar",
-    price: "Free",
-    tags: ["Comedy", "Nightlife", "Free"],
-  },
-  {
-    id: 4,
-    name: "Student Friendly Pub",
-    category: "Pub",
-    area: "Camden",
-    price: "Under €20",
-    tags: ["Drinks", "Group-friendly", "Open late"],
-  },
-];
+type SearchPageProps = {
+  searchParams: Promise<{
+    area?: string;
+    category?: string;
+    budget?: string;
+  }>;
+};
 
-export default function SearchPage() {
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const params = await searchParams;
+
+  const selectedArea = params.area ?? "Any";
+  const selectedCategory = params.category ?? "Any";
+  const selectedBudget = Number(params.budget ?? "9");
+
+  const filteredPlaces = places.filter((place) => {
+    const areaMatches =
+      selectedArea === "Any" ||
+      place.area === selectedArea ||
+      place.tags.includes(selectedArea);
+
+    const categoryMatches =
+      selectedCategory === "Any" || place.category === selectedCategory;
+
+    const budgetMatches =
+      selectedBudget === 9 || place.budgetLevel <= selectedBudget;
+
+    return areaMatches && categoryMatches && budgetMatches;
+  });
+
   return (
     <main className="min-h-screen bg-white px-6 py-10">
       <section className="mx-auto max-w-4xl">
@@ -48,7 +43,8 @@ export default function SearchPage() {
         </h1>
 
         <p className="mt-2 text-gray-600">
-          Here are some student-friendly places and events in Dublin.
+          Showing results for {selectedArea} · {selectedCategory} · Budget level{" "}
+          {selectedBudget}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -66,18 +62,30 @@ export default function SearchPage() {
           </button>
         </div>
 
-        <div className="mt-8 grid gap-4">
-          {places.map((place) => (
-            <PlaceCard
-              key={place.id}
-              name={place.name}
-              category={place.category}
-              area={place.area}
-              price={place.price}
-              tags={place.tags}
-            />
-          ))}
-        </div>
+        {filteredPlaces.length === 0 ? (
+          <div className="mt-8 rounded-2xl border border-gray-200 p-6">
+            <h2 className="text-xl font-semibold text-gray-900">
+              No results found
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Try changing the area, category or budget.
+            </p>
+          </div>
+        ) : (
+          <div className="mt-8 grid gap-4">
+            {filteredPlaces.map((place) => (
+              <PlaceCard
+                key={place.id}
+                id={place.id}
+                name={place.name}
+                category={place.category}
+                area={place.area}
+                price={place.price}
+                tags={place.tags}
+              />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
