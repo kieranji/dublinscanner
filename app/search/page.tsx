@@ -1,5 +1,6 @@
 import PlaceCard from "@/components/PlaceCard";
-import { places } from "@/lib/data";
+import {places} from "@/lib/data";
+import { getBudgetLabel } from "@/lib/filters";
 
 type SearchPageProps = {
   searchParams: Promise<{
@@ -43,8 +44,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         </h1>
 
         <p className="mt-2 text-gray-600">
-          Showing results for {selectedArea} · {selectedCategory} · Budget level{" "}
-          {selectedBudget}
+          Showing results for {selectedArea} · {selectedCategory} ·{" "}
+          {getBudgetLabel(selectedBudget)}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
