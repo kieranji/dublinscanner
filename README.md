@@ -40,3 +40,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 Real Dublin place and event data is collected using the structure in `data-template.md`.
 
 The first version uses manually curated demo data before moving to a database.
+The initial real dataset plan is documented in `real-data-plan.md`.
