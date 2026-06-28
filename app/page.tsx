@@ -26,6 +26,16 @@ export default function Home() {
           </div>
           <div className="rounded-xl bg-gray-100 p-4 font-semibold text-gray-900">Study cafés</div>
         </div>
+
+        <div className="mt-6">
+          <a
+            href="/map"
+            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+          >
+            Open Dublin map
+          </a>
+        </div>
+        
       </section>
     </main>
   );

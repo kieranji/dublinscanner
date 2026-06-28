@@ -103,6 +103,12 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </button>
         </div>
 
+        <div className="mt-4">
+          <a href="/map" className="text-sm font-semibold text-gray-950 underline">
+            View on map
+          </a>
+        </div>
+
         {sortedPlaces.length === 0 ? (
           <div className="mt-8 rounded-2xl border border-gray-200 p-6">
             <h2 className="text-xl font-semibold text-gray-900">
