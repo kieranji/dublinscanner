@@ -7,6 +7,7 @@ type SearchPageProps = {
     area?: string;
     category?: string;
     budget?: string;
+    sort?: string;
   }>;
 };
 
@@ -16,6 +17,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const selectedArea = params.area ?? "Any";
   const selectedCategory = params.category ?? "Any";
   const selectedBudget = Number(params.budget ?? "9");
+  const selectedSort = params.sort??"best";
 
   const filteredPlaces = places.filter((place) => {
     const areaMatches =
@@ -32,10 +34,17 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     return areaMatches && categoryMatches && budgetMatches;
   });
 
+  const sortedPlaces = [...filteredPlaces].sort((a,b)=>{
+    if (selectedSort==="cheapest"){
+      return a.budgetLevel - b.budgetLevel;
+    }  
+    return 0;
+  });
+
   return (
     <main className="min-h-screen bg-white px-6 py-10">
       <section className="mx-auto max-w-4xl">
-        <a href="/" className="text-sm text-gray-500 underline">
+        <a href="/" className="text-sm font-semibold text-gray-950 underline">
           Back to home
         </a>
 
@@ -43,27 +52,48 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           Search results
         </h1>
 
-        <p className="mt-2 text-gray-600">
-          Showing results for {selectedArea} · {selectedCategory} ·{" "}
-          {getBudgetLabel(selectedBudget)}
+        <p className="mt-2 text-base text-gray-800">
+          Showing results for{" "}
+          <span className="font-semibold text-gray-950">{selectedArea}</span> ·{" "}
+          <span className="font-semibold text-gray-950">{selectedCategory}</span> ·{" "}
+          <span className="font-semibold text-gray-950">
+            {getBudgetLabel(selectedBudget)}
+          </span>
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          <button className="rounded-full border px-4 py-2 text-sm">
+          <a
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=best`}
+            className={
+              selectedSort === "best"
+                ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"
+                : "rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950"
+            }
+          >
             Best match
-          </button>
-          <button className="rounded-full border px-4 py-2 text-sm">
+          </a>
+
+          <a
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=cheapest`}
+            className={
+              selectedSort === "cheapest"
+                ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"
+                : "rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950"
+            }
+          >
             Cheapest
-          </button>
-          <button className="rounded-full border px-4 py-2 text-sm">
+          </a>
+
+          <button className="rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950">
             Closest
           </button>
-          <button className="rounded-full border px-4 py-2 text-sm">
+
+          <button className="rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950">
             Open now
           </button>
         </div>
 
-        {filteredPlaces.length === 0 ? (
+        {sortedPlaces.length === 0 ? (
           <div className="mt-8 rounded-2xl border border-gray-200 p-6">
             <h2 className="text-xl font-semibold text-gray-900">
               No results found
@@ -74,7 +104,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </div>
         ) : (
           <div className="mt-8 grid gap-4">
-            {filteredPlaces.map((place) => (
+            {sortedPlaces.map((place) => (
               <PlaceCard
                 key={place.id}
                 id={place.id}

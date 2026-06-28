@@ -27,11 +27,11 @@ export default function SearchForm() {
       onSubmit={handleSubmit}
       className="mt-8 rounded-2xl border border-gray-200 p-4 shadow-sm"
     >
-      <label className="block text-sm font-medium text-gray-700">Where?</label>
+      <label className="block text-sm font-semibold text-gray-900"></label>
       <select
         value={area}
         onChange={(event) => setArea(event.target.value)}
-        className="mt-2 w-full rounded-lg border border-gray-300 p-3"
+        className="mt-2 w-full rounded-lg border border-gray-400 bg-white p-3 text-base font-medium text-gray-900"
       >
         <option>Near TCD</option>
         <option>City Centre</option>
@@ -42,13 +42,13 @@ export default function SearchForm() {
         <option>Any</option>
       </select>
 
-      <label className="mt-4 block text-sm font-medium text-gray-700">
+      <label className="mt-4 block text-sm font-semibold text-gray-900">
         What do you want?
       </label>
       <select
         value={category}
         onChange={(event) => setCategory(event.target.value)}
-        className="mt-2 w-full rounded-lg border border-gray-300 p-3"
+        className="mt-2 w-full rounded-lg border border-gray-400 bg-white p-3 text-base font-medium text-gray-900"
       >
         <option>Food</option>
         <option>Café</option>
@@ -57,13 +57,13 @@ export default function SearchForm() {
         <option>Any</option>
       </select>
 
-      <label className="mt-4 block text-sm font-medium text-gray-700">
+      <label className="mt-4 block text-sm font-semibold text-gray-900">
         Budget
       </label>
       <select
         value={budget}
         onChange={(event) => setBudget(event.target.value)}
-        className="mt-2 w-full rounded-lg border border-gray-300 p-3"
+        className="mt-2 w-full rounded-lg border border-gray-400 bg-white p-3 text-base font-medium text-gray-900"
       >
         <option value="0">Free</option>
         <option value="1">Under €10</option>
@@ -71,7 +71,7 @@ export default function SearchForm() {
         <option value="9">Any</option>
       </select>
 
-      <button className="mt-6 w-full rounded-lg bg-black px-4 py-3 font-medium text-white">
+      <button className="mt-6 w-full rounded-lg bg-black px-4 py-3 text-base font-semibold text-white">
         Search Dublin
       </button>
     </form>

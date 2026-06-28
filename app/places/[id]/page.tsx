@@ -14,7 +14,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
     return (
       <main className="min-h-screen bg-white px-6 py-10">
         <section className="mx-auto max-w-3xl">
-          <a href="/search" className="text-sm text-gray-500 underline">
+          <a href="/search" className="text-sm font-semibold text-gray-950 underline">
             Back to search
           </a>
 
@@ -29,7 +29,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
   return (
     <main className="min-h-screen bg-white px-6 py-10">
       <section className="mx-auto max-w-3xl">
-        <a href="/search" className="text-sm text-gray-500 underline">
+        <a href="/search" className="text-sm font-semibold text-gray-950 underline">
           Back to search
         </a>
 
@@ -48,7 +48,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
         <div className="mt-6 rounded-2xl border border-gray-200 p-5">
           <h2 className="font-semibold text-gray-900">Details</h2>
 
-          <p className="mt-3 text-sm text-gray-600">
+          <p className="mt-3 text-sm font-medium text-gray-800">
             Address: {place.address}
           </p>
 
@@ -56,7 +56,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
             {place.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-900"
               >
                 {tag}
               </span>

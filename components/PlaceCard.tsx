@@ -21,12 +21,12 @@ export default function PlaceCard({
         <div>
           <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
 
-          <p className="mt-1 text-sm text-gray-600">
+          <p className="mt-1 text-sm font-medium text-gray-800">
             {category} · {area} · {price}
           </p>
         </div>
 
-        <button className="rounded-lg bg-black px-4 py-2 text-sm text-white">
+        <button className="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white">
           Save
         </button>
       </div>
@@ -35,18 +35,18 @@ export default function PlaceCard({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
+            className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-900"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="mt-4 flex gap-4 text-sm">
-        <a href={`/places/${id}`} className="underline">
+      <div className="mt-4 flex gap-4 text-sm font-semibold">
+        <a href={`/places/${id}`} className="text-gray-950 underline">
           View details
         </a>
-        <a href="#" className="underline">
+        <a href="#" className="text-gray-950 underline">
           Open Maps
         </a>
       </div>
