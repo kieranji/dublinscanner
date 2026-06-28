@@ -5,6 +5,7 @@ type PlaceCardProps = {
   area: string;
   price: string;
   distanceFromTcdKm: number;
+  sourceName: string;
   tags: string[];
 };
 
@@ -15,6 +16,7 @@ export default function PlaceCard({
   area,
   price,
   distanceFromTcdKm,
+  sourceName,
   tags,
 }: PlaceCardProps) {
   return (
@@ -24,7 +26,11 @@ export default function PlaceCard({
           <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
 
           <p className="mt-1 text-sm font-medium text-gray-800">
-            {category} · {area} · {price} · {distanceFromTcdKm}
+            {category} · {area} · {price} · {distanceFromTcdKm} km from TCD
+          </p>
+          
+          <p className="mt-2 text-xs font-semibold text-gray-700">
+            Source: {sourceName}
           </p>
         </div>
 

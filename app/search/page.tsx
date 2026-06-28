@@ -129,6 +129,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 area={place.area}
                 price={place.price}
                 distanceFromTcdKm={place.distanceFromTcdKm}
+                sourceName={place.sourceName}
                 tags={place.tags}
               />
             ))}
