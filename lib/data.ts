@@ -5,6 +5,9 @@ export type Place = {
   area: string;
   price: string;
   budgetLevel: number;
+  distanceFromTcdKm: number;
+  latitude: number;
+  longitude: number;
   description: string;
   address: string;
   tags: string[];
@@ -20,6 +23,9 @@ export const places: Place[] = [
     area: "City Centre",
     price: "Under €15",
     budgetLevel: 2,
+    distanceFromTcdKm: 0.8,
+    latitude: 53.3438,
+    longitude: -6.2646,
     description:
       "A student-friendly ramen spot close to Trinity. Good for a quick dinner after lectures or before a night out.",
     address: "City Centre, Dublin",
@@ -34,6 +40,9 @@ export const places: Place[] = [
     area: "Near TCD",
     price: "Under €10",
     budgetLevel: 1,
+    distanceFromTcdKm: 0.3,
+    latitude: 53.3445,
+    longitude: -6.2589,
     description:
       "A quiet café suitable for studying, coffee breaks and small group work near campus.",
     address: "Near Trinity College Dublin",
@@ -48,6 +57,9 @@ export const places: Place[] = [
     area: "Temple Bar",
     price: "Free",
     budgetLevel: 0,
+    distanceFromTcdKm: 0.9,
+    latitude: 53.3456,
+    longitude: -6.2642,
     description:
       "A free evening comedy event in central Dublin. Good for students looking for something affordable to do at night.",
     address: "Temple Bar, Dublin",
@@ -62,6 +74,9 @@ export const places: Place[] = [
     area: "Camden",
     price: "Under €20",
     budgetLevel: 2,
+    distanceFromTcdKm: 1.5,
+    latitude: 53.3368,
+    longitude: -6.2651,
     description:
       "A casual pub option for groups, drinks and late evening plans around Camden.",
     address: "Camden Street, Dublin",

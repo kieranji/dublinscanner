@@ -38,6 +38,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     if (selectedSort==="cheapest"){
       return a.budgetLevel - b.budgetLevel;
     }  
+    if (selectedSort==="closest"){
+      return a.distanceFromTcdKm - b.distanceFromTcdKm;
+    }
     return 0;
   });
 
@@ -84,9 +87,16 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             Cheapest
           </a>
 
-          <button className="rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950">
+          <a
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=closest`}
+            className={
+              selectedSort === "closest"
+                ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"
+                : "rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950"
+            }
+          >
             Closest
-          </button>
+          </a>
 
           <button className="rounded-full border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950">
             Open now
@@ -112,6 +122,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 category={place.category}
                 area={place.area}
                 price={place.price}
+                distanceFromTcdKm={place.distanceFromTcdKm}
                 tags={place.tags}
               />
             ))}
