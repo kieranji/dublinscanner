@@ -7,6 +7,7 @@ type SearchPageProps = {
     area?: string;
     category?: string;
     budget?: string;
+    source?: string;
     sort?: string;
   }>;
 };
@@ -17,6 +18,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const selectedArea = params.area ?? "Any";
   const selectedCategory = params.category ?? "Any";
   const selectedBudget = Number(params.budget ?? "9");
+  const selectedSource = params.source ?? "Any";
   const selectedSort = params.sort??"best";
 
   const filteredPlaces = places.filter((place) => {
@@ -30,6 +32,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
     const budgetMatches =
       selectedBudget === 9 || place.budgetLevel <= selectedBudget;
+
+    const sourceMatches =
+      selectedSource === "Any" || place.sourceName === selectedSource;
 
     return areaMatches && categoryMatches && budgetMatches;
   });
@@ -61,12 +66,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <span className="font-semibold text-gray-950">{selectedCategory}</span> ·{" "}
           <span className="font-semibold text-gray-950">
             {getBudgetLabel(selectedBudget)}
-          </span>
+          </span>{" "}
+          · <span className="font-semibold text-gray-950">{selectedSource}</span>
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           <a
-            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=best`}
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&source=${selectedSource}&sort=best`}
             className={
               selectedSort === "best"
                 ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"
@@ -77,7 +83,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </a>
 
           <a
-            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=cheapest`}
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&source=${selectedSource}&sort=cheapest`}
             className={
               selectedSort === "cheapest"
                 ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"
@@ -88,7 +94,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </a>
 
           <a
-            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&sort=closest`}
+            href={`/search?area=${selectedArea}&category=${selectedCategory}&budget=${selectedBudget}&source=${selectedSource}&sort=closest`}
             className={
               selectedSort === "closest"
                 ? "rounded-full bg-black px-4 py-2 text-sm font-semibold text-white"

@@ -9,6 +9,7 @@ export default function SearchForm() {
   const [area, setArea] = useState("Near TCD");
   const [category, setCategory] = useState("Food");
   const [budget, setBudget] = useState("2");
+  const [source, setSource] = useState("Any");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,6 +18,7 @@ export default function SearchForm() {
       area,
       category,
       budget,
+      source,
     });
 
     router.push(`/search?${params.toString()}`);
@@ -69,6 +71,22 @@ export default function SearchForm() {
         <option value="1">Under €10</option>
         <option value="2">Under €20</option>
         <option value="9">Any</option>
+      </select>
+
+      <label className="mt-4 block text-sm font-semibold text-gray-900">
+        Source
+      </label>
+      
+      <select
+        value={source}
+        onChange={(event) => setSource(event.target.value)}
+        className="mt-2 w-full rounded-lg border border-gray-400 bg-white p-3 text-base font-medium text-gray-900"
+      >
+        <option>Any</option>
+        <option>Google Maps</option>
+        <option>Eventbrite</option>
+        <option>Instagram</option>
+        <option>Manual curated</option>
       </select>
 
       <button className="mt-6 w-full rounded-lg bg-black px-4 py-3 text-base font-semibold text-white">

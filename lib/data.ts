@@ -33,7 +33,7 @@ export const places: Place[] = [
     tags: ["Asian food", "Cheap", "Near TCD"],
     mapsUrl: "https://www.google.com/maps",
     sourceUrl: "https://www.google.com",
-    sourceName: "Manual curated",
+    sourceName: "Google Maps",
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ export const places: Place[] = [
     tags: ["Comedy", "Nightlife", "Free"],
     mapsUrl: "https://www.google.com/maps",
     sourceUrl: "https://www.google.com",
-    sourceName: "Manual curated",
+    sourceName: "Eventbrite",
   },
   {
     id: 4,
@@ -87,7 +87,7 @@ export const places: Place[] = [
     tags: ["Drinks", "Group-friendly", "Open late"],
     mapsUrl: "https://www.google.com/maps",
     sourceUrl: "https://www.google.com",
-    sourceName: "Manual curated",
+    sourceName: "Instagram",
   },
 ];
 

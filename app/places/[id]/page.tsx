@@ -52,9 +52,11 @@ export default async function PlacePage({ params }: PlacePageProps) {
             Address: {place.address}
           </p>
 
-          <p className="mt-2 text-sm font-medium text-gray-800">
-            Source: {place.sourceName}
-          </p>
+          <div className="mt-3">
+            <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm font-semibold text-gray-950">
+              Source: {place.sourceName}
+            </span>
+          </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {place.tags.map((tag) => (
