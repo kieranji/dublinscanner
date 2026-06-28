@@ -34,6 +34,13 @@ export default function Home() {
           >
             Open Dublin map
           </a>
+
+          <a
+            href="/about"
+            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+          >
+            About this project
+          </a>
         </div>
         
       </section>
