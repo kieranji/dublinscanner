@@ -113,6 +113,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <a href="/map" className="text-sm font-semibold text-gray-950 underline">
             View on map
           </a>
+
+          <a
+            href="/saved"
+            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+          >
+            Saved places
+          </a>
         </div>
 
         {sortedPlaces.length === 0 ? (

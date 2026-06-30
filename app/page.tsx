@@ -41,6 +41,13 @@ export default function Home() {
           >
             About this project
           </a>
+
+          <a
+            href="/saved"
+            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+          >
+            Saved places
+          </a>
         </div>
         
       </section>

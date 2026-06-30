@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 type PlaceCardProps = {
   id: number;
   name: string;
@@ -6,8 +10,8 @@ type PlaceCardProps = {
   price: string;
   distanceFromTcdKm: number;
   sourceName: string;
-  tags: string[];
   dateLabel?: string;
+  tags: string[];
 };
 
 export default function PlaceCard({
@@ -18,9 +22,33 @@ export default function PlaceCard({
   price,
   distanceFromTcdKm,
   sourceName,
-  tags,
   dateLabel,
+  tags,
 }: PlaceCardProps) {
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    const savedIds = JSON.parse(localStorage.getItem("savedPlaces") || "[]");
+    setIsSaved(savedIds.includes(id));
+  }, [id]);
+
+  function handleSave() {
+    const savedIds: number[] = JSON.parse(
+      localStorage.getItem("savedPlaces") || "[]"
+    );
+
+    let nextSavedIds: number[];
+
+    if (savedIds.includes(id)) {
+      nextSavedIds = savedIds.filter((savedId) => savedId !== id);
+    } else {
+      nextSavedIds = [...savedIds, id];
+    }
+
+    localStorage.setItem("savedPlaces", JSON.stringify(nextSavedIds));
+    setIsSaved(nextSavedIds.includes(id));
+  }
+
   return (
     <article className="rounded-2xl border border-gray-200 p-5 shadow-sm">
       <div className="flex items-start justify-between gap-4">
@@ -30,20 +58,29 @@ export default function PlaceCard({
           <p className="mt-1 text-sm font-medium text-gray-800">
             {category} · {area} · {price} · {distanceFromTcdKm} km from TCD
           </p>
-          
-          <p className="mt-2 text-xs font-semibold text-gray-700">
-            Source: {sourceName}
-          </p>
+
+          <div className="mt-3">
+            <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-semibold text-gray-950">
+              Source: {sourceName}
+            </span>
+          </div>
+
+          {dateLabel && (
+            <p className="mt-3 text-sm font-semibold text-gray-900">
+              {dateLabel}
+            </p>
+          )}
         </div>
 
-        {dateLabel && (
-          <p className="mt-3 text-sm font-semibold text-gray-900">
-            {dateLabel}
-          </p>
-        )}
-
-        <button className="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white">
-          Save
+        <button
+          onClick={handleSave}
+          className={
+            isSaved
+              ? "rounded-lg border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950"
+              : "rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white"
+          }
+        >
+          {isSaved ? "Saved" : "Save"}
         </button>
       </div>
 
