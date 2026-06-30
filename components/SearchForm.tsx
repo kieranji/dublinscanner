@@ -86,6 +86,7 @@ export default function SearchForm() {
         <option>Google Maps</option>
         <option>Eventbrite</option>
         <option>Instagram</option>
+        <option>Official website</option>
         <option>Manual curated</option>
       </select>
 

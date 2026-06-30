@@ -31,20 +31,20 @@ This file stores candidate real Dublin data before adding it to `lib/data.ts`.
 
 ### 2. Food option near TCD
 
-- name:
+- name: The Buttery
 - category: Food
-- area:
-- price:
-- budgetLevel:
-- distanceFromTcdKm:
-- latitude:
-- longitude:
-- address:
-- tags:
-- mapsUrl:
-- sourceUrl:
-- sourceName:
-- description:
+- area: Near TCD
+- price: Under €10
+- budgetLevel: 1
+- distanceFromTcdKm: 0.1
+- latitude: 53.3439
+- longitude: -6.2565
+- address: Trinity College Dublin, College Green, Dublin 2
+- tags: Student-friendly, Cheap, Near TCD, Campus food
+- mapsUrl: https://www.google.com/maps/search/?api=1&query=The%20Buttery%20Trinity%20College%20Dublin
+- sourceUrl: https://www.tcd.ie/about/return-to-campus/whats-open/
+- sourceName: Official website
+- description: A convenient on-campus food option for Trinity students, useful for quick meals between lectures and affordable campus lunches.
 
 ### 3. Free culture / museum idea
 
