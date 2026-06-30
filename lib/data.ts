@@ -235,6 +235,25 @@ export const places: Place[] = [
   sourceUrl: "https://www.tcd.ie/about/return-to-campus/whats-open/",
   sourceName: "Official website",
 },
+{
+  id: 13,
+  name: "National Gallery of Ireland",
+  category: "Event",
+  area: "City Centre",
+  price: "Free",
+  budgetLevel: 0,
+  distanceFromTcdKm: 0.8,
+  latitude: 53.3409,
+  longitude: -6.2527,
+  description:
+    "A free city-centre gallery near Trinity, useful for rainy days, solo visits, casual cultural plans and low-budget student activities.",
+  address: "Merrion Square West, Dublin 2",
+  tags: ["Free", "Culture", "Rainy day", "Near TCD"],
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=National%20Gallery%20of%20Ireland%20Merrion%20Square%20West%20Dublin",
+  sourceUrl: "https://www.nationalgallery.ie/",
+  sourceName: "Official website",
+},
 ];
 
 // 0 = Free

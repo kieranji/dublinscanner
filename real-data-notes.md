@@ -48,20 +48,20 @@ This file stores candidate real Dublin data before adding it to `lib/data.ts`.
 
 ### 3. Free culture / museum idea
 
-- name:
+- name: National Gallery of Ireland
 - category: Event
-- area:
+- area: City Centre
 - price: Free
 - budgetLevel: 0
-- distanceFromTcdKm:
-- latitude:
-- longitude:
-- address:
-- tags:
-- mapsUrl:
-- sourceUrl:
-- sourceName:
-- description:
+- distanceFromTcdKm: 0.8
+- latitude: 53.3409
+- longitude: -6.2527
+- address: Merrion Square West, Dublin 2
+- tags: Free, Culture, Rainy day, Near TCD
+- mapsUrl: https://www.google.com/maps/search/?api=1&query=National%20Gallery%20of%20Ireland%20Merrion%20Square%20West%20Dublin
+- sourceUrl: https://www.nationalgallery.ie/
+- sourceName: Official website
+- description: A free city-centre gallery near Trinity, useful for rainy days, solo visits, casual cultural plans and low-budget student activities.
 
 ### 4. Eventbrite event
 
