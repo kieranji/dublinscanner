@@ -14,20 +14,20 @@ This file stores candidate real Dublin data before adding it to `lib/data.ts`.
 
 ### 1. Study café near TCD
 
-- name:
+- name: Kaph
 - category: Café
-- area:
-- price:
-- budgetLevel:
-- distanceFromTcdKm:
-- latitude:
-- longitude:
-- address:
-- tags:
-- mapsUrl:
-- sourceUrl:
-- sourceName:
-- description:
+- area: City Centre
+- price: Under €10
+- budgetLevel: 1
+- distanceFromTcdKm: 0.7
+- latitude: 53.3427
+- longitude: -6.2635
+- address: 31 Drury St, Dublin 2, D02 Y684
+- tags: Study spot, Coffee, Near TCD, City Centre
+- mapsUrl: https://www.google.com/maps/search/?api=1&query=Kaph%2031%20Drury%20Street%20Dublin
+- sourceUrl: https://kaph.ie/
+- sourceName: Official website
+- description: A city-centre coffee shop near Trinity with upstairs seating, useful for solo study sessions, coffee breaks and light work.
 
 ### 2. Food option near TCD
 

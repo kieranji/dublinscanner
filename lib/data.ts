@@ -197,6 +197,25 @@ export const places: Place[] = [
     sourceUrl: "https://www.google.com",
     sourceName: "Manual curated",
   },
+  {
+  id: 11,
+  name: "Kaph",
+  category: "Café",
+  area: "City Centre",
+  price: "Under €10",
+  budgetLevel: 1,
+  distanceFromTcdKm: 0.7,
+  latitude: 53.3427,
+  longitude: -6.2635,
+  description:
+    "A city-centre coffee shop near Trinity with upstairs seating, useful for solo study sessions, coffee breaks and light work.",
+  address: "31 Drury St, Dublin 2, D02 Y684",
+  tags: ["Study spot", "Coffee", "Near TCD", "City Centre"],
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Kaph%2031%20Drury%20Street%20Dublin",
+  sourceUrl: "https://kaph.ie/",
+  sourceName: "Official website",
+},
 ];
 
 // 0 = Free
