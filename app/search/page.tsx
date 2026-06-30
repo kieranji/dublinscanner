@@ -136,6 +136,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 price={place.price}
                 distanceFromTcdKm={place.distanceFromTcdKm}
                 sourceName={place.sourceName}
+                dateLabel={place.dateLabel}
                 tags={place.tags}
               />
             ))}

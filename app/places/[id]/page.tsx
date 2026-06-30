@@ -41,7 +41,13 @@ export default async function PlacePage({ params }: PlacePageProps) {
           {place.name}
         </h1>
 
-        <p className="mt-3 text-lg text-gray-600">{place.price}</p>
+        <p className="mt-3 text-lg text-gray-800">{place.price}</p>
+
+        {place.dateLabel && (
+          <p className="mt-3 text-base font-semibold text-gray-900">
+            {place.dateLabel}
+          </p>
+        )}
 
         <p className="mt-6 text-gray-700">{place.description}</p>
 

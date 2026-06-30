@@ -7,6 +7,7 @@ type PlaceCardProps = {
   distanceFromTcdKm: number;
   sourceName: string;
   tags: string[];
+  dateLabel?: string;
 };
 
 export default function PlaceCard({
@@ -18,6 +19,7 @@ export default function PlaceCard({
   distanceFromTcdKm,
   sourceName,
   tags,
+  dateLabel,
 }: PlaceCardProps) {
   return (
     <article className="rounded-2xl border border-gray-200 p-5 shadow-sm">
@@ -33,6 +35,12 @@ export default function PlaceCard({
             Source: {sourceName}
           </p>
         </div>
+
+        {dateLabel && (
+          <p className="mt-3 text-sm font-semibold text-gray-900">
+            {dateLabel}
+          </p>
+        )}
 
         <button className="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white">
           Save

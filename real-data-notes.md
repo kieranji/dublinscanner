@@ -65,34 +65,34 @@ This file stores candidate real Dublin data before adding it to `lib/data.ts`.
 
 ### 4. Eventbrite event
 
-- name:
+- name: Elena Rose live in Dublin
 - category: Event
-- area:
-- price:
-- budgetLevel:
-- distanceFromTcdKm:
-- latitude:
-- longitude:
-- address:
-- tags:
-- mapsUrl:
-- sourceUrl:
+- area: City Centre
+- price: Under €30
+- budgetLevel: 3
+- distanceFromTcdKm: 1.2
+- latitude: 53.3367
+- longitude: -6.2644
+- address: Opium, Dublin 2
+- tags: Music, Nightlife, Weekend, City Centre
+- mapsUrl: https://www.google.com/maps/search/?api=1&query=Opium%20Dublin%202
+- sourceUrl: https://www.eventbrite.ie/e/elena-rose-live-in-dublin-tickets-1983450856906
 - sourceName: Eventbrite
-- description:
+- description: A ticketed live music event in Dublin 2, useful for students looking for a weekend nightlife or concert plan.
 
 ### 5. Pub / nightlife place
 
-- name:
+- name: The Workman's Club
 - category: Pub
-- area:
-- price:
-- budgetLevel:
-- distanceFromTcdKm:
-- latitude:
-- longitude:
-- address:
-- tags:
-- mapsUrl:
-- sourceUrl:
-- sourceName:
-- description:
+- area: Temple Bar
+- price: Under €20
+- budgetLevel: 2
+- distanceFromTcdKm: 0.9
+- latitude: 53.3457
+- longitude: -6.2658
+- address: 10 Wellington Quay, Dublin 2
+- tags: Nightlife, Music, Group-friendly, Temple Bar
+- mapsUrl: https://www.google.com/maps/search/?api=1&query=The%20Workmans%20Club%2010%20Wellington%20Quay%20Dublin
+- sourceUrl: https://theworkmansclub.com/
+- sourceName: Official website
+- description: A well-known Dublin live entertainment venue and nightlife spot, useful for gigs, drinks and group plans near Temple Bar.
