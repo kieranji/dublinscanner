@@ -25,7 +25,7 @@ export default function MapPage() {
           </div>
 
           <a
-            href="/search?area=Any&category=Any&budget=9&sort=closest"
+            href="/search?area=Any&category=Any&budget=9&source=Any&sort=closest"
             className="rounded-lg bg-black px-4 py-3 text-center text-sm font-semibold text-white"
           >
             View closest results

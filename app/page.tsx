@@ -27,24 +27,24 @@ export default function Home() {
           <div className="rounded-xl bg-gray-100 p-4 font-semibold text-gray-900">Study cafés</div>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <a
             href="/map"
-            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+            className="rounded-xl border border-gray-400 px-5 py-4 text-center font-semibold text-gray-950 hover:bg-gray-50"
           >
             Open Dublin map
           </a>
 
           <a
             href="/about"
-            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+            className="rounded-xl border border-gray-400 px-5 py-4 text-center font-semibold text-gray-950 hover:bg-gray-50"
           >
             About this project
           </a>
 
           <a
             href="/saved"
-            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+            className="rounded-xl border border-gray-400 px-5 py-4 text-center font-semibold text-gray-950 hover:bg-gray-50"
           >
             Saved places
           </a>

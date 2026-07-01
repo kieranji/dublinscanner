@@ -109,14 +109,14 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </button>
         </div>
 
-        <div className="mt-4">
-          <a href="/map" className="text-sm font-semibold text-gray-950 underline">
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a href="/map" className="rounded-lg border border-gray-400 px-4 py-2 text-sm font-semibold text-gray-950 hover:bg-gray-50">
             View on map
           </a>
 
           <a
             href="/saved"
-            className="inline-flex rounded-lg border border-gray-400 px-4 py-3 font-semibold text-gray-950"
+            className="rounded-lg border border-gray-400 px-4 py-2 text-sm font-semibold text-gray-950 hover:bg-gray-50"
           >
             Saved places
           </a>
