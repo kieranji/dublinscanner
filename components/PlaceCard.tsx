@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import SaveButton from "./SaveButton";
 
 type PlaceCardProps = {
   id: number;
@@ -25,30 +23,6 @@ export default function PlaceCard({
   dateLabel,
   tags,
 }: PlaceCardProps) {
-  const [isSaved, setIsSaved] = useState(false);
-
-  useEffect(() => {
-    const savedIds = JSON.parse(localStorage.getItem("savedPlaces") || "[]");
-    setIsSaved(savedIds.includes(id));
-  }, [id]);
-
-  function handleSave() {
-    const savedIds: number[] = JSON.parse(
-      localStorage.getItem("savedPlaces") || "[]"
-    );
-
-    let nextSavedIds: number[];
-
-    if (savedIds.includes(id)) {
-      nextSavedIds = savedIds.filter((savedId) => savedId !== id);
-    } else {
-      nextSavedIds = [...savedIds, id];
-    }
-
-    localStorage.setItem("savedPlaces", JSON.stringify(nextSavedIds));
-    setIsSaved(nextSavedIds.includes(id));
-  }
-
   return (
     <article className="rounded-2xl border border-gray-200 p-5 shadow-sm">
       <div className="flex items-start justify-between gap-4">
@@ -72,16 +46,7 @@ export default function PlaceCard({
           )}
         </div>
 
-        <button
-          onClick={handleSave}
-          className={
-            isSaved
-              ? "rounded-lg border border-gray-400 bg-white px-4 py-2 text-sm font-semibold text-gray-950"
-              : "rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white"
-          }
-        >
-          {isSaved ? "Saved" : "Save"}
-        </button>
+        <SaveButton placeId={id} />
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
@@ -99,6 +64,7 @@ export default function PlaceCard({
         <a href={`/places/${id}`} className="text-gray-950 underline">
           View details
         </a>
+
         <a href="#" className="text-gray-950 underline">
           Open Maps
         </a>
