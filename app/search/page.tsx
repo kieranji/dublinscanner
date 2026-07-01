@@ -145,6 +145,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 sourceName={place.sourceName}
                 dateLabel={place.dateLabel}
                 mapsUrl={place.mapsUrl}
+                sourceUrl={place.sourceUrl}
                 tags={place.tags}
               />
             ))}

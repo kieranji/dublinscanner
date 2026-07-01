@@ -10,6 +10,7 @@ type PlaceCardProps = {
   sourceName: string;
   dateLabel?: string;
   mapsUrl: string;
+  sourceUrl: string;
   tags: string[];
 };
 
@@ -23,6 +24,7 @@ export default function PlaceCard({
   sourceName,
   dateLabel,
   mapsUrl,
+  sourceUrl,
   tags,
 }: PlaceCardProps) {
   return (
@@ -74,6 +76,16 @@ export default function PlaceCard({
           className="text-gray-950 underline"
         >
           Open Maps
+        </a>
+        
+
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-gray-950 underline"
+        >
+          View source
         </a>
       </div>
     </article>

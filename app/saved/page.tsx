@@ -85,6 +85,7 @@ export default function SavedPage() {
                 sourceName={place.sourceName}
                 dateLabel={place.dateLabel}
                 mapsUrl={place.mapsUrl}
+                sourceUrl={place.sourceUrl}
                 tags={place.tags}
               />
             ))}
