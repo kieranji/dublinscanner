@@ -144,6 +144,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 distanceFromTcdKm={place.distanceFromTcdKm}
                 sourceName={place.sourceName}
                 dateLabel={place.dateLabel}
+                mapsUrl={place.mapsUrl}
                 tags={place.tags}
               />
             ))}

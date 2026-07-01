@@ -84,6 +84,7 @@ export default function SavedPage() {
                 distanceFromTcdKm={place.distanceFromTcdKm}
                 sourceName={place.sourceName}
                 dateLabel={place.dateLabel}
+                mapsUrl={place.mapsUrl}
                 tags={place.tags}
               />
             ))}

@@ -9,6 +9,7 @@ type PlaceCardProps = {
   distanceFromTcdKm: number;
   sourceName: string;
   dateLabel?: string;
+  mapsUrl: string;
   tags: string[];
 };
 
@@ -21,6 +22,7 @@ export default function PlaceCard({
   distanceFromTcdKm,
   sourceName,
   dateLabel,
+  mapsUrl,
   tags,
 }: PlaceCardProps) {
   return (
@@ -65,7 +67,12 @@ export default function PlaceCard({
           View details
         </a>
 
-        <a href="#" className="text-gray-950 underline">
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-gray-950 underline"
+        >
           Open Maps
         </a>
       </div>
